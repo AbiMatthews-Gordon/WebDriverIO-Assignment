@@ -90,15 +90,11 @@ class RegistrationPage extends Page {
         return $('button[type = "submit"][title ="Create an Account"]');
     }
 
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
-    // async login (username, password) {
-    //     await this.inputUsername.setValue(username);
-    //     await this.inputPassword.setValue(password);
-    //     await this.btnSubmit.click();
-    // }
+    get registrationConfirmationMessage (){
+        return $('div[role=alert]');
+    }
+
+ 
 
     async registration (firstname, lastname, email, password, passwordConfirmation) {
         await this.inputFirstname.setValue(firstname);
