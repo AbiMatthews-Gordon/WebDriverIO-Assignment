@@ -87,9 +87,7 @@ class SignupPage extends Page {
     get signupConfirmationMessage (){
         return $('div[role=alert]');
     }
-
  
-
     async signup (firstname, lastname, email, password, passwordConfirmation) {
         await this.inputFirstname.setValue(firstname);
         await this.inputLastname.setValue(lastname);

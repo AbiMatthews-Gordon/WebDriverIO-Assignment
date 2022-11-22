@@ -2,7 +2,7 @@ const signupPage = require('../pageobjects/signup.page');
 // const LoginPage = require('../pageobjects/signup.page');
 // const SecurePage = require('../pageobjects/product.page');
 
-describe('My Login application', () => {
+describe('My Signup application', () => {
 
     // it('should login with valid credentials', async () => {
     //     await LoginPage.open();
@@ -12,7 +12,7 @@ describe('My Login application', () => {
     //     await expect(SecurePage.flashAlert).toHaveTextContaining(
     //         'You logged into a secure area!');
     // });
-
+/*
     it(' Should check that error message is on all fields prior to filling out form', async () => {
         
         //open register page
@@ -52,7 +52,7 @@ describe('My Login application', () => {
             "This is a required field.");
     });
 
-    //checking invalid that an invalid email produces the below error message 
+    //checking that an invalid email produces the below error message 
     it(' Should not register with invalid email', async () => {
 
         //open register page
@@ -64,7 +64,7 @@ describe('My Login application', () => {
             'Please enter a valid email address (Ex: johndoe@domain.com)');
     });
 
-    //checking invalid that an invalid password length produces the below error message 
+    //checking that an invalid password length produces the below error message 
     it(' Should not register with invalid password length', async () => {
 
         //open register page
@@ -76,7 +76,7 @@ describe('My Login application', () => {
             'Minimum length of this field must be equal or greater than 8 symbols. Leading and trailing spaces will be ignored.');
     });
 
-    //checking invalid that an invalid password confirmation produces the below error message 
+    //checking that an invalid password confirmation produces the below error message 
     it(' Should not register if confirmation password does not match password', async () => {
 
         //open register page
@@ -87,7 +87,7 @@ describe('My Login application', () => {
         await expect(signupPage.passwordConfirmationError).toHaveTextContaining(
             'Please enter the same value again.');
     });
-
+*/
     //creating the account
     // it(' Should create an account', async () => {
 
