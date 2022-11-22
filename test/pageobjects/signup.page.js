@@ -22,27 +22,21 @@ password error selector - #password-confirmation-error  - Please enter the same 
 
 button create an account selector - button[type = "submit"][title ="Create an Account"]
 
-registration confirmation alert selector - div[role="alert"]
-registration confirmation message - Thank you for registering with Fake Online Clothing Store.
-registration confirmation url - https://magento.softwaretestingboard.com/customer/account/
+signup confirmation alert selector - div[role="alert"]
+signup confirmation message - Thank you for registering with Fake Online Clothing Store.
+signup confirmation url - https://magento.softwaretestingboard.com/customer/account/
 
 welcome Jane Doe selector - .panel.header .greet.welcome
 welcome Jane Doe message - .panel.header .greet.welcome .logged-in
 ***********************************************************************************************
-
-
-
 */
-
-
-
 
 const Page = require('./page');
 
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class RegistrationPage extends Page {
+class SignupPage extends Page {
     /**
      * define selectors using getter methods
      */
@@ -90,13 +84,13 @@ class RegistrationPage extends Page {
         return $('button[type = "submit"][title ="Create an Account"]');
     }
 
-    get registrationConfirmationMessage (){
+    get signupConfirmationMessage (){
         return $('div[role=alert]');
     }
 
  
 
-    async registration (firstname, lastname, email, password, passwordConfirmation) {
+    async signup (firstname, lastname, email, password, passwordConfirmation) {
         await this.inputFirstname.setValue(firstname);
         await this.inputLastname.setValue(lastname);
         await this.inputEmail.setValue(email);
@@ -113,4 +107,4 @@ class RegistrationPage extends Page {
     }
 }
 
-module.exports = new RegistrationPage();
+module.exports = new SignupPage();
