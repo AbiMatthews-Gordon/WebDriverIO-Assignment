@@ -2,7 +2,7 @@ const signupPage = require('../pageobjects/signup.page');
 // const LoginPage = require('../pageobjects/signup.page');
 // const SecurePage = require('../pageobjects/product.page');
 
-describe('My Signup application', () => {
+describe('Signup application', () => {
 
     // it('should login with valid credentials', async () => {
     //     await LoginPage.open();
@@ -13,7 +13,7 @@ describe('My Signup application', () => {
     //         'You logged into a secure area!');
     // });
 /*
-    it(' Should check that error message is on all fields prior to filling out form', async () => {
+    it(' should check that error message is on all fields before completing', async () => {
         
         //open register page
         await signupPage.open();
@@ -53,7 +53,7 @@ describe('My Signup application', () => {
     });
 
     //checking that an invalid email produces the below error message 
-    it(' Should not register with invalid email', async () => {
+    it(' should not register with invalid email', async () => {
 
         //open register page
         await signupPage.open();
@@ -65,7 +65,7 @@ describe('My Signup application', () => {
     });
 
     //checking that an invalid password length produces the below error message 
-    it(' Should not register with invalid password length', async () => {
+    it(' should not register with invalid password length', async () => {
 
         //open register page
         await signupPage.open();
@@ -77,7 +77,7 @@ describe('My Signup application', () => {
     });
 
     //checking that an invalid password confirmation produces the below error message 
-    it(' Should not register if confirmation password does not match password', async () => {
+    it(' should not register if confirmation password does not match password', async () => {
 
         //open register page
         await signupPage.open();
@@ -89,13 +89,12 @@ describe('My Signup application', () => {
     });
 */
     //creating the account
-    // it(' Should create an account', async () => {
+    // it(' should create an account', async () => {
 
     //     //open the page
     //     await signupPage.open();
 
     //     //set values in fields
-    //     //click create an account button
     //     await signupPage.signup('Jane', 'Doe', 'email@email.com', 'p@ssword1', 'p@ssword1');
 
     //     //check redirection page

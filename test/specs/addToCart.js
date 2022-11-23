@@ -3,12 +3,16 @@ const addToCartPage = require('../pageobjects/addToCart.page');
 
 // see tank top for $20 so go look if its actually $20
 
-describe('My Add to Cart Application', () => {
+describe('Add to Cart Application', () => {
+
+    //opening page before each test 
+    beforeEach(() => {
+        //open add to cart page
+        await addToCartPage.open();
+    });
 
     //checking that an error appears if size is not selected
     it('should not add to cart without selecting size', async () => {
-        //open add to cart page
-        await addToCartPage.open();
 
         //press add to cart button
         await addToCartPage.btnAddToCart.click();
@@ -21,15 +25,9 @@ describe('My Add to Cart Application', () => {
 
     //checking that an error appears if colour is not selected
     it('should not add to cart without selecting colour', async () => {
-        //open add to cart page
-        await addToCartPage.open();
 
-        console.log("before");
-        
         //press add to cart button
         await addToCartPage.btnAddToCart.click();
-        
-        //console.log("after");
 
         await expect(browser).toHaveUrl(addToCartPage.colourErrorUrl);
         await expect(addToCartPage.colourError).toBeExisting();
@@ -40,8 +38,6 @@ describe('My Add to Cart Application', () => {
     
     //successfully adding to cart
     it('should add to cart', async () => {
-        //open add to cart page
-        await addToCartPage.open();
 
         //set values in fields
         //click add to cart button
