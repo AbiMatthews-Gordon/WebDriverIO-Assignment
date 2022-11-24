@@ -39,7 +39,7 @@ const Page = require('./page');
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class PurchaseProductPage extends Page {
+class CheckoutProductPage extends Page {
     /**
      * define selectors using getter methods
      */
@@ -53,11 +53,6 @@ class PurchaseProductPage extends Page {
         return $('#top-cart-btn-checkout');
     }
      
-    //redirected url link
-    get redirectedUrl (){
-        return 'https://magento.softwaretestingboard.com/checkout/#shipping';
-    }
-
     //email selector
     get inputEmail (){
         return $('#customer-email-fieldset #customer-email');
@@ -83,7 +78,7 @@ class PurchaseProductPage extends Page {
         return $('input[name="street[0]"');
     }
     //street address error
-    get inputStreetAddressError (){
+    get streetAddressError (){
         return $('input[name="street[0]"] + .field-error');
     }
 
@@ -93,7 +88,7 @@ class PurchaseProductPage extends Page {
     }
 
     //city error
-    get inputCityError (){
+    get cityError (){
         return $('input[name="city"] + .field-error');
     }
 
@@ -108,7 +103,7 @@ class PurchaseProductPage extends Page {
     }
     
     //zip code error
-    get inputZipCodeError (){
+    get zipCodeError (){
         return $('input[name="postcode"] + .field-error');
     }
 
@@ -123,7 +118,7 @@ class PurchaseProductPage extends Page {
     }
 
     //number error
-    get inputNumberError (){
+    get numberError (){
         return $('input[name=telephone] + .field-error');
     }
 
@@ -136,18 +131,24 @@ class PurchaseProductPage extends Page {
         return $('button.continue');
     }
 
-    //redirected page link
-    get nextRedirectedUrl (){
+    
+    //place order button selector
+    get btnPlaceOrder (){
+        return $('.action.primary.checkout[title="Place Order"]');
+    }
+
+    //shipping url link
+    get shippingFormUrl (){
+        return 'https://magento.softwaretestingboard.com/checkout/#shipping';
+    }
+    
+    //review payments link
+    get reviewPaymentsUrl (){
         return 'https://magento.softwaretestingboard.com/checkout/#payment';
     }
 
-    //place order button selector
-    get btnPlaceOrder (){
-        return $('.action.primary.checkout[title="Place Order"] span');
-    }
-
-    //redirected page link
-    get orderRedirectedUrl (){
+    //finalize payment link
+    get finalizePaymentUrl (){
         return 'https://magento.softwaretestingboard.com/checkout/onepage/success/';
     }
 
@@ -160,6 +161,14 @@ class PurchaseProductPage extends Page {
         return $('.actions-toolbar .action.primary.continue span');
     }
 
+    get checkoutLoader (){
+        return $('#checkout-loader');
+    }
+
+    get shippingAddressContainer(){
+        return $('.shipping-address-items');
+    }
+
     // //continue shopping redirected link selector
     // get continueShoppingRedirectedUrl (){
     //     return $('');
@@ -169,20 +178,25 @@ class PurchaseProductPage extends Page {
         await this.cartIcon.click();
         await this.proceedToCheckout.click();
     }
+
     async fillOrderForm (email, password, streetAddress, city, state, zip, country, number) {
-        await this.inputEmail.setValue(email);
-        await this.inputStreetAddress.setValue(streetAddress);
-        await this.inputCountry.selectByAttribute('value', country);
-        await this.inputCity.setValue(city);
-        await this.inputZipCode.setValue(zip);
-        await this.inputNumber.setValue(number);
-        await this.inputState.waitForDisplayed({timeout: 3000});
-        await this.inputState.setValue(state);
-        await this.inputPassword.waitForDisplayed({timeout: 5000});
-        await this.inputPassword.setValue(password);
-        await this.btnLogin.waitForDisplayed({timeout: 5000});
-        await this.btnLogin.click();
-        // await this.selectShippingMethod.click();
+        
+        let inputCountryExists = await this.inputCountry.isExisting();
+        console.log("--------------------------------------------\n\n");
+        console.log(inputCountryExists);
+        console.log("--------------------------------------------\n\n");
+        if(inputCountryExists){
+            await this.inputCountry.waitForClickable({timeout: 5000});
+            await this.inputCountry.selectByAttribute('value', country);
+            await this.inputZipCode.setValue(zip);
+            await this.inputState.waitForClickable({timeout: 5000});
+            await this.inputNumber.setValue(number);
+            await this.inputState.setValue(state);
+            await this.inputStreetAddress.setValue(streetAddress);
+            await this.inputCity.setValue(city);
+            // await this.selectShippingMethod.click();
+        }
+        await this.btnNext.waitForClickable({timeout: 10000});
         await this.btnNext.click();
     }
     
@@ -190,6 +204,7 @@ class PurchaseProductPage extends Page {
         await this.btnPlaceOrder.click();
         await this.btnContinueShopping.click();
     }
+
     /**
      * overwrite specific options to adapt it to page object
      */
@@ -198,4 +213,4 @@ class PurchaseProductPage extends Page {
     }
 }
 
-module.exports = new PurchaseProductPage();
+module.exports = new CheckoutProductPage();

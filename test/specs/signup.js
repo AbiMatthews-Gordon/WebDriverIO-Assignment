@@ -2,7 +2,7 @@ const signupPage = require('../pageobjects/signup.page');
 // const LoginPage = require('../pageobjects/signup.page');
 // const SecurePage = require('../pageobjects/product.page');
 
-describe('Signup application', () => {
+describe('The Signup application', () => {
 
     // it('should login with valid credentials', async () => {
     //     await LoginPage.open();

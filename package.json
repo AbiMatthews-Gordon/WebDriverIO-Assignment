@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio run wdio.conf.js",
-    "posttest":"C:\\Windows\\System32\\taskkill /IM \"java.exe\" /F"
+    "test": "npx kill-port 4444 && npx wdio run wdio.conf.js",
+    "posttest": "C:\\Windows\\System32\\taskkill /IM \"java.exe\" /F"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "faker": "^5.5.3",
     "webdriverio": "^7.26.0"
   },
   "devDependencies": {
