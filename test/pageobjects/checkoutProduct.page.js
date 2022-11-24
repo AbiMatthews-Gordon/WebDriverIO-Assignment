@@ -7,6 +7,7 @@ class CheckoutProductPage extends Page {
     /**
      * define selectors using getter methods
      */
+
     //cartIcon selector
     get cartIcon (){
         return $('.action.showcart');
@@ -26,11 +27,6 @@ class CheckoutProductPage extends Page {
     get inputPassword (){
         return $('#customer-password');
     }
-
-    // //invalid email / password selector
-    // get inputEmailPasswordError (){
-    //     return $('div[role="alert"] div');
-    // }
 
     //login button selector
     get btnLogin (){
@@ -86,16 +82,11 @@ class CheckoutProductPage extends Page {
         return $('input[name=telephone] + .field-error');
     }
 
-    // get selectShippingMethod (){
-    //     return $('.row .radio');
-    // }
-
     //Next button selector
     get btnNext (){
         return $('button.continue');
     }
 
-    
     //place order button selector
     get btnPlaceOrder (){
         return $('.action.primary.checkout[title="Place Order"]');
@@ -132,11 +123,6 @@ class CheckoutProductPage extends Page {
     get shippingAddressContainer(){
         return $('.shipping-address-items');
     }
-
-    // //continue shopping redirected link selector
-    // get continueShoppingRedirectedUrl (){
-    //     return $('');
-    // }
 
     async goToCheckout(){
         await this.cartIcon.click();

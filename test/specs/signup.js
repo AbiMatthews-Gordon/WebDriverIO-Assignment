@@ -4,16 +4,16 @@ const signupPage = require('../pageobjects/signup.page');
 
 describe('The Signup application', () => {
 
-    // it('should login with valid credentials', async () => {
-    //     await LoginPage.open();
+    it('should login with valid credentials', async () => {
+        await LoginPage.open();
 
-    //     await LoginPage.login('tomsmith', 'SuperSecretPassword!');
-    //     await expect(SecurePage.flashAlert).toBeExisting();
-    //     await expect(SecurePage.flashAlert).toHaveTextContaining(
-    //         'You logged into a secure area!');
-    // });
-/*
-    it(' should check that error message is on all fields before completing', async () => {
+        await LoginPage.login('tomsmith', 'SuperSecretPassword!');
+        await expect(SecurePage.flashAlert).toBeExisting();
+        await expect(SecurePage.flashAlert).toHaveTextContaining(
+            'You logged into a secure area!');
+    });
+
+    it('should check that error message is on all fields before completing', async () => {
         
         //open register page
         await signupPage.open();
@@ -53,7 +53,7 @@ describe('The Signup application', () => {
     });
 
     //checking that an invalid email produces the below error message 
-    it(' should not register with invalid email', async () => {
+    it('should not register with invalid email', async () => {
 
         //open register page
         await signupPage.open();
@@ -65,7 +65,7 @@ describe('The Signup application', () => {
     });
 
     //checking that an invalid password length produces the below error message 
-    it(' should not register with invalid password length', async () => {
+    it('should not register with invalid password length', async () => {
 
         //open register page
         await signupPage.open();
@@ -77,7 +77,7 @@ describe('The Signup application', () => {
     });
 
     //checking that an invalid password confirmation produces the below error message 
-    it(' should not register if confirmation password does not match password', async () => {
+    it('should not register if confirmation password does not match password', async () => {
 
         //open register page
         await signupPage.open();
@@ -87,25 +87,24 @@ describe('The Signup application', () => {
         await expect(signupPage.passwordConfirmationError).toHaveTextContaining(
             'Please enter the same value again.');
     });
-*/
+
     //creating the account
-    // it(' should create an account', async () => {
+    it('should create an account', async () => {
 
-    //     //open the page
-    //     await signupPage.open();
+        //open the page
+        await signupPage.open();
 
-    //     //set values in fields
-    //     await signupPage.signup('Jane', 'Doe', 'email@email.com', 'p@ssword1', 'p@ssword1');
+        //set values in fields
+        await signupPage.signup('Jane', 'Doe', 'email@email.com', 'p@ssword1', 'p@ssword1');
 
-    //     //check redirection page
-    //      await expect(browser).toHaveUrl('https://magento.softwaretestingboard.com/customer/account');
-    //     //check creation message
+        //check redirection page
+         await expect(browser).toHaveUrl('https://magento.softwaretestingboard.com/customer/account');
+        //check creation message
     
-    //     await expect(signupPage.signupConfirmationMessage).toHaveTextContaining(
-    //     'Thank you for registering with Fake Online Clothing Store');
+        await expect(signupPage.signupConfirmationMessage).toHaveTextContaining(
+        'Thank you for registering with Fake Online Clothing Store');
 
-    // });
-
+    });
 });
 
 

@@ -3,8 +3,8 @@ const Page = require('./page');
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class verifyPurchasePage extends Page {
-    orderNumber;
+class VerifyPurchasePage extends Page {
+    //orderNumber;
 
     //my order page link
     get myOrderUrl() {
@@ -34,7 +34,6 @@ class verifyPurchasePage extends Page {
         return $('.history tbody tr:nth-child(1) .col.id');
     }
 
-
     //function to collect order #
     async collectOrderNumber() {
 
@@ -50,4 +49,4 @@ class verifyPurchasePage extends Page {
     }
 }
 
-module.exports = new verifyPurchasePage();
+module.exports = new VerifyPurchasePage();

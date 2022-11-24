@@ -4,7 +4,7 @@ const addToCartPage = require('../pageobjects/addToCart.page');
 // see tank top for $20 so go look if its actually $20
 
 describe('The Add to Cart application ', () => {
-/*
+
     //opening page before each test 
     beforeEach(() => {
         //open add to cart page
@@ -54,5 +54,5 @@ describe('The Add to Cart application ', () => {
         //read price
         await expect(addToCartPage.miniCartPrice).toHaveTextContaining(
             '$34.00');
-    });*/
+    });
 });

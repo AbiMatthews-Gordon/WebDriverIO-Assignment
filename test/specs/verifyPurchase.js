@@ -4,7 +4,7 @@ const addToCartPage = require('../pageobjects/addToCart.page');
 const loginPage = require('../pageobjects/login.page');
 
 
-describe('The user ', () => {
+describe('The user', () => {
 
     //open login page and login
     beforeEach(async () => {
@@ -12,7 +12,7 @@ describe('The user ', () => {
         await loginPage.login("reuse@reuse.com","p@ssword1");
     });
 
-    it(' should be able to verify order history', async () => { 
+    it('should be able to verify order history', async () => { 
         // place order
         await addToCartPage.open();
 
