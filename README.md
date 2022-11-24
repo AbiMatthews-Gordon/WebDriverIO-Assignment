@@ -20,7 +20,7 @@ Along with Data-Driven Tests, Negative Test/Unhappy Paths are included. It is al
 
 # Commands
 
-* To execute individual test, **use npm run test --spec <path>** example
+* To execute individual test, **use npm run test --spec < path >** example
     - npm run test --spec.\test\specs\addToCart.js
     - npm run test --spec.\test\specs\checkoutProduct.js
     - npm run test --spec.\test\specs\signup.js
