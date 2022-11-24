@@ -1,8 +1,3 @@
-/*
-SIGNUP
------
-*/
-
 const Page = require('./page');
 
 /**

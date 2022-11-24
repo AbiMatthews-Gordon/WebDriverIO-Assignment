@@ -1,27 +1,25 @@
-LUMA Website Test Automation
+# LUMA Website Test Automation
 
 This is a WebDriverIO Test Automation project for the LUMA website, which can be found at https://magento.softwaretestingboard.com/. It carries out the following workflows:
 
-• Signup 
-• Adding a Product to your Cart
-• Purchasing a Product
-• Verify Purchase in Order History
+* Signup 
+* Adding a Product to your Cart
+* Purchasing a Product
+* Verify Purchase in Order History
 
-Along with Data-Driven Tests, Negative Test/Unhappy Paths are included. It is also set up for testing across multiple browsers and utilitizes the NPM Faker package.
+Along with Data-Driven Tests, Negative Test/Unhappy Paths are included. It is also set up for testing across multiple browsers.
 
+# Instructions
 
+1. Navigate to the project's root directory in your Terminal.
+2. Enter the command **npm install** to install the *dependencies*.
+3. Enter the given command below to run tests.
 
-INSTRUCTIONS
+# Commands
 
-Navigate to the project's root directory in your Terminal.
-Enter the command npm install to install the dependencies.
-Enter the given command below to run tests.
+* To execute all test, use **npm run test**
 
-COMMANDS
-
-* To execute all test, use npm run test
-
-CROSS BROWER TESTING
+# Cross Browser Testing
 
 All tests are run in Chrome by default, but they can be configured to run in other browsers such as Firefox. Here's how to do it:
 

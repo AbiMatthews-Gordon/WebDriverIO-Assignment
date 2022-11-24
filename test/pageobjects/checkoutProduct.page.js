@@ -1,39 +1,3 @@
-/*
-PURCHASE
---------
-country selector - #E7OISUC
-
-shipping method selector - .row .radio
-
-invalid password selector - div[role="alert"] div
-invalid password message - Invalid login or password.
-
-email address message - You can create an account after checkout.
-email address message selector - .note span
-
-firstname required field error selector - #error-WYU9RHQ
-firstname required field error message - This is a required field.
-
-lastname required field error selector - #error-D51XLNW
-lastname required field error message - This is a required field.
-
-street address required field error selector - #error-SEQCCR7
-street address required field error message - This is a required field.
-
-city required field error selector - #error-UFREIKH
-city required field error selector message - This is a required field.
-
-zip required field error selector - #error-THCMFGV
-zip required field error selector message - This is a required field.
-
-phone number required field error selector - #error-D8TPC2N
-phone number required field error selector message - This is a required field.
-
-selecting next without fields filled error selector - [role="alert"].message
-selecting next without fields filled error message - The shipping method is missing. Select the shipping method and try again.
-***********************************************************************************************
-*/
-
 const Page = require('./page');
 
 /**
@@ -180,7 +144,7 @@ class CheckoutProductPage extends Page {
     }
 
     async fillOrderForm (email, password, streetAddress, city, state, zip, country, number) {
-        
+
         let inputCountryExists = await this.inputCountry.isExisting();
         console.log("--------------------------------------------\n\n");
         console.log(inputCountryExists);

@@ -98,8 +98,9 @@ describe('The Signup application', () => {
     //     await signupPage.signup('Jane', 'Doe', 'email@email.com', 'p@ssword1', 'p@ssword1');
 
     //     //check redirection page
-
+    //      await expect(browser).toHaveUrl('https://magento.softwaretestingboard.com/customer/account');
     //     //check creation message
+    
     //     await expect(signupPage.signupConfirmationMessage).toHaveTextContaining(
     //     'Thank you for registering with Fake Online Clothing Store');
 

@@ -6,8 +6,9 @@ describe("The user " , () => {
 
     //opening page before each test 
     beforeEach(async () => {
-    //     //open purchase product page
-    //     await purchaseProductPage.open();
+
+        //open purchase product page
+        //await purchaseProductPage.open();
         await loginPage.open();
         await loginPage.login("reuse@reuse.com","p@ssword1");
     });

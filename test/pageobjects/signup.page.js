@@ -1,36 +1,3 @@
-/*
-SIGNUP
------
-
-firstname selector - #firstname
-firstname error selector - #firstname-error ("This is a required field.")
-
-lastname selector - #lastname
-lastname error selector - #lastname-error ("This is a required field.")
-
-email selector - #email_address
-email error selector - #email_address-error -This is a required field.
-email error selector - #email_address-error - Please enter a valid email address (Ex: johndoe@domain.com).
-
-password selector - #password
-password error selector - #password-error - This is a required field.
-password error selector - #password-error - Minimum length of this field must be equal or greater than 8 symbols. Leading and trailing spaces will be ignored.
-
-password confirmation selector - #password-confirmation
-password error selector - #password-confirmation-error  - This is a required field.")
-password error selector - #password-confirmation-error  - Please enter the same value again.
-
-button create an account selector - button[type = "submit"][title ="Create an Account"]
-
-signup confirmation alert selector - div[role="alert"]
-signup confirmation message - Thank you for registering with Fake Online Clothing Store.
-signup confirmation url - https://magento.softwaretestingboard.com/customer/account/
-
-welcome Jane Doe selector - .panel.header .greet.welcome
-welcome Jane Doe message - .panel.header .greet.welcome .logged-in
-***********************************************************************************************
-*/
-
 const Page = require('./page');
 
 /**
