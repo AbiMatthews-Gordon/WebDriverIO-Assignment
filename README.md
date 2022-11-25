@@ -25,7 +25,7 @@ Along with Data-Driven Tests, Negative Test/Unhappy Paths are included. It is al
 ```bash
 npm run test --spec < path > 
 ```
-example
+Examples
 ```bash
     - npm run test --spec.\test\specs\addToCart.js
 ```
@@ -38,8 +38,10 @@ example
 ```bash
     - npm run test --spec.\test\specs\verifyPurchase.js
 ```
-* To execute all test, use **npm run test**
-
+* To execute all test, use 
+```bash
+npm run test
+```
 ---
 
 ## Cross Browser Testing
