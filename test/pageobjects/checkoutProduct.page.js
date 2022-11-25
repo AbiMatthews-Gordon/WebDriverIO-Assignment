@@ -129,13 +129,9 @@ class CheckoutProductPage extends Page {
         await this.proceedToCheckout.click();
     }
 
-    async fillOrderForm (email, password, streetAddress, city, state, zip, country, number) {
-
-        let inputCountryExists = await this.inputCountry.isExisting();
-        console.log("--------------------------------------------\n\n");
-        console.log(inputCountryExists);
-        console.log("--------------------------------------------\n\n");
-        if(inputCountryExists){
+    async fillOrderForm (streetAddress, city, state, zip, country, number) {
+        try{
+            await this.inputCountry.waitForClickable();
             await this.inputCountry.waitForClickable({timeout: 5000});
             await this.inputCountry.selectByAttribute('value', country);
             await this.inputZipCode.setValue(zip);
@@ -144,7 +140,8 @@ class CheckoutProductPage extends Page {
             await this.inputState.setValue(state);
             await this.inputStreetAddress.setValue(streetAddress);
             await this.inputCity.setValue(city);
-            // await this.selectShippingMethod.click();
+        }catch(error){
+            
         }
         await this.btnNext.waitForClickable({timeout: 10000});
         await this.btnNext.click();

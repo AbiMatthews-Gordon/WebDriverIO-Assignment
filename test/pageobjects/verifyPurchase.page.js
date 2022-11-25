@@ -16,17 +16,12 @@ class VerifyPurchasePage extends Page {
         return $('.base');
     }
    
-    get myOrderNumberHistory() {
+    get myOrderNumberCheckout() {
         return $('.order-number');
     }
 
-    get myOrderNumberCheckout() {
+    get myOrderNumberHistory() {
         return $('.history tbody tr:nth-child(1) .col.id');
-    }
-
-    //my order number given upon purchase
-    get orderNumber() {
-        return this.orderNumber;
     }
 
     //verifying the number on the or placed

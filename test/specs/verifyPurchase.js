@@ -2,6 +2,7 @@ const verifyPurchasePage = require('../pageobjects/verifyPurchase.page');
 const checkoutProductPage = require('../pageobjects/checkoutProduct.page');
 const addToCartPage = require('../pageobjects/addToCart.page');
 const loginPage = require('../pageobjects/login.page');
+const testUser = require('./test.data');
 
 
 describe('The user', () => {
@@ -19,7 +20,8 @@ describe('The user', () => {
         await addToCartPage.addToCart();
         await addToCartPage.miniCartProductName.waitForExist({timeout:5000});
         await checkoutProductPage.goToCheckout();
-        await checkoutProductPage.fillOrderForm("reuse@reuse.com", "p@ssword1", "3 flowers road, streety", "flowers", "St Andrew", 0000, "JM", "(876)123-45678");
+        await checkoutProductPage.fillOrderForm(testUser[0].address.street, testUser[0].address.city, 
+            testUser[0].address.state, testUser[0].address.zip, testUser[0].address.country, testUser[0].address.phone);
         await expect(browser).toHaveUrl(checkoutProductPage.reviewPaymentsUrl);
         await checkoutProductPage.btnPlaceOrder.waitForClickable();
         await checkoutProductPage.btnPlaceOrder.click();

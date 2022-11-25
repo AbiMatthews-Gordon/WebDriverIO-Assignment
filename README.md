@@ -11,25 +11,38 @@ Along with Data-Driven Tests, Negative Test/Unhappy Paths are included. It is al
 
 ---
 
-# Instructions
+## Instructions
 
-1. Navigate to the project's root directory in your Terminal.
-2. Enter the command **npm install** to install the ***dependencies***.
-3. Enter the given command below to run tests.
+1. Clone the repository
+2. Navigate to the project's root directory in your Terminal.
+3. Enter the command **npm install** to install the ***dependencies***.
+4. Enter the given command below to run tests.
 ---
 
-# Commands
+## Commands
 
-* To execute individual test, **use npm run test --spec < path >** example
+* To execute individual test, use 
+```bash
+npm run test --spec < path > 
+```
+example
+```bash
     - npm run test --spec.\test\specs\addToCart.js
+```
+```bash
     - npm run test --spec.\test\specs\checkoutProduct.js
+```
+```bash
     - npm run test --spec.\test\specs\signup.js
+```
+```bash
     - npm run test --spec.\test\specs\verifyPurchase.js
+```
 * To execute all test, use **npm run test**
 
 ---
 
-# Cross Browser Testing
+## Cross Browser Testing
 
 All tests are run in Chrome by default, but they can be configured to run in other browsers such as Firefox. Here's how to do it:
 

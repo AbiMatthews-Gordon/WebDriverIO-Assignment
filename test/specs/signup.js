@@ -1,17 +1,10 @@
 const signupPage = require('../pageobjects/signup.page');
+const testUser = require('./test.data');
+const {faker} = require('@faker-js/faker');
 // const LoginPage = require('../pageobjects/signup.page');
 // const SecurePage = require('../pageobjects/product.page');
 
 describe('The Signup application', () => {
-
-    it('should login with valid credentials', async () => {
-        await LoginPage.open();
-
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        await expect(SecurePage.flashAlert).toBeExisting();
-        await expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!');
-    });
 
     it('should check that error message is on all fields before completing', async () => {
         
@@ -58,7 +51,7 @@ describe('The Signup application', () => {
         //open register page
         await signupPage.open();
 
-        await signupPage.signup('Jane', 'Doe', 'tree');
+        await signupPage.signup(testUser[0].firstName, testUser[0].lastName, 'tree');
         await expect(signupPage.emailError).toBeExisting();
         await expect(signupPage.emailError).toHaveTextContaining(
             'Please enter a valid email address (Ex: johndoe@domain.com)');
@@ -70,7 +63,7 @@ describe('The Signup application', () => {
         //open register page
         await signupPage.open();
 
-        await signupPage.signup('Jane', 'Doe', 'server@email.com', 'p@');
+        await signupPage.signup(testUser[0].firstName, testUser[0].lastName, faker.internet.email(), 'p@');
         await expect(signupPage.passwordError).toBeExisting();
         await expect(signupPage.passwordError).toHaveTextContaining(
             'Minimum length of this field must be equal or greater than 8 symbols. Leading and trailing spaces will be ignored.');
@@ -82,12 +75,12 @@ describe('The Signup application', () => {
         //open register page
         await signupPage.open();
 
-        await signupPage.signup('Jane', 'Doe', 'server@email.com', 'p@ssword1', 'p@');
+        await signupPage.signup(testUser[0].firstName, testUser[0].lastName, faker.internet.email(), testUser[0].password, 'p@1');
         await expect(signupPage.passwordConfirmationError).toBeExisting();
         await expect(signupPage.passwordConfirmationError).toHaveTextContaining(
             'Please enter the same value again.');
     });
-
+    
     //creating the account
     it('should create an account', async () => {
 
@@ -95,7 +88,7 @@ describe('The Signup application', () => {
         await signupPage.open();
 
         //set values in fields
-        await signupPage.signup('Jane', 'Doe', 'email@email.com', 'p@ssword1', 'p@ssword1');
+        await signupPage.signup(testUser[0].firstName, testUser[0].lastName, testUser[0].email, testUser[0].password, testUser[0].password);
 
         //check redirection page
          await expect(browser).toHaveUrl('https://magento.softwaretestingboard.com/customer/account');
