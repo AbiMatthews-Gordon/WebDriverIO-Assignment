@@ -27,16 +27,16 @@ npm run test --spec < path >
 ```
 Examples
 ```bash
-    - npm run test --spec.\test\specs\addToCart.js
+    npm run test --spec.\test\specs\addToCart.js
 ```
 ```bash
-    - npm run test --spec.\test\specs\checkoutProduct.js
+    npm run test --spec.\test\specs\checkoutProduct.js
 ```
 ```bash
-    - npm run test --spec.\test\specs\signup.js
+    npm run test --spec.\test\specs\signup.js
 ```
 ```bash
-    - npm run test --spec.\test\specs\verifyPurchase.js
+    npm run test --spec.\test\specs\verifyPurchase.js
 ```
 * To execute all test, use 
 ```bash
