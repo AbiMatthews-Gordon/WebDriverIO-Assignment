@@ -6,7 +6,7 @@ const {faker} = require('@faker-js/faker');
 
 describe('The Signup application', () => {
 
-    it('should check that error message is on all fields before completing', async () => {
+    it('Should show error message for all required fields when empty', async () => {
         
         //open register page
         await signupPage.open();
@@ -88,10 +88,10 @@ describe('The Signup application', () => {
         await signupPage.open();
 
         //set values in fields
-        await signupPage.signup(testUser[0].firstName, testUser[0].lastName, testUser[0].email, testUser[0].password, testUser[0].password);
+        await signupPage.signup(testUser[0].firstName, testUser[0].lastName, faker.internet.email(), testUser[0].password, testUser[0].password);
 
         //check redirection page
-         await expect(browser).toHaveUrl('https://magento.softwaretestingboard.com/customer/account');
+         await expect(browser).toHaveUrl('https://magento.softwaretestingboard.com/customer/account/');
         //check creation message
     
         await expect(signupPage.signupConfirmationMessage).toHaveTextContaining(

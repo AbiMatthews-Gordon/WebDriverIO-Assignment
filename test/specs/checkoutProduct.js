@@ -12,10 +12,11 @@ describe("The user" , () => {
         //open purchase product page
         //await purchaseProductPage.open();
         await loginPage.open();
-        await loginPage.login("reuse@reuse.com","p@ssword1");
     });
-
+    /*
     it('should check that error message is on all fields before completing form', async () => {
+        await loginPage.login("Mandy.Bode46@yahoo.com","p@ssword1");
+
         await addToCartPage.open();
 
         await addToCartPage.addToCart();
@@ -46,8 +47,9 @@ describe("The user" , () => {
         await expect(checkoutProductPage.numberError).toHaveTextContaining(
             "This is a required field.");
     });
-
+*/
     it('should be able to checkout', async () => {
+        await loginPage.login("reuse@reuse.com","p@ssword1");
 
         await addToCartPage.open();
 

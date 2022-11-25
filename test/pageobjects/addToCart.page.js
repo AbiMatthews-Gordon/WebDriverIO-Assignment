@@ -8,7 +8,7 @@ class AddToCartPage extends Page {
      * define selectors using getter methods
      */
     get lumaLogo () {
-        return $('logo');
+        return $('.logo');
     }
 
     get size () {
@@ -20,15 +20,15 @@ class AddToCartPage extends Page {
     }
 
     get sizeErrorUrl () {
-        return $('https://magento.softwaretestingboard.com/breathe-easy-tank.html');
+        return 'https://magento.softwaretestingboard.com/breathe-easy-tank.html';
     }
 
     get colour () {
-        return $('#option-label-color-93-item-60');
+        return $('.product-items li:nth-child(2) .color .swatch-option:nth-child(2)');
     }
 
     get colourError () {
-        return $('.cf-tweet-this.cf-tt-target.cf-tt-enabled.cf-tt-element-attached-bottom.cf-tt-element-attached-center.cf-tt-target-attached-top.cf-tt-target-attached-center');
+        return $('.page div[role="alert"] ');
     }
 
     get colourErrorUrl () {
@@ -44,6 +44,10 @@ class AddToCartPage extends Page {
     }
 
     get cartIcon () {
+        return $('.action.showcart');
+    }
+
+    get cartCounter () {
         return $('.counter-number');
     }
 
@@ -59,7 +63,7 @@ class AddToCartPage extends Page {
     async addToCart () {
         await this.size.isClickable();
         await this.size.click();
-        await this.colour.click()
+        await this.colour.click();
         await this.btnAddToCart.click();
     }
 

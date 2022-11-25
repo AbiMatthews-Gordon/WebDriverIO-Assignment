@@ -46,12 +46,11 @@ npm run test
 
 ## Cross Browser Testing
 
-All tests are run in Chrome by default, but they can be configured to run in other browsers such as Firefox. Here's how to do it:
+All tests are run in Chrome and firefox by default, but they can be configured to run in either browser only. Here's how to do it:
 
 * Open the ***wdio.conf.js file***.
 * Go to line 52 - the capabilities section
-* Comment line 59 that has "browserName: 'chrome'," and
-* Uncomment line 60 that has "browserName: 'firefox',"
+* Comment the entire object containing the browser you do not want to test on 
 * Save the file and execute it once more for it to run in the Firefox browser.
 
 Do this interchangeably for preferred browser.
